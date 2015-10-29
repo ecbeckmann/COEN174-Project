@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML> 
 <html> 
 	<head> 
@@ -14,12 +17,22 @@
 	<nav class="navbar navbar-default"> 
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.php">
-					<img id="logo" alt="Brand" src="https://cloud.githubusercontent.com/assets/4735087/10567984/20b70294-75c6-11e5-941f-efffff4745bb.png"> 
-					<a href="login.php"> <button id="login" type="button" class="btn btn-default">Login</button></a>
+					<img id="logo" alt="Brand" src="https://cloud.githubusercontent.com/assets/4735087/10567984/20b70294-75c6-11e5-941f-efffff4745bb.png">
+					<?php
+					include('loginbutton.php');
+					?>
 				</a>
 			</div>
 	</nav>
 		<div class="container-fluid">
+			<div class="row">
+			
+		  <?php
+			if(isset($_SESSION['login_user'])){
+				echo '<a href="add.php"> <button id = "add" type="button" class="btn btn-success btn-lg">Add</button></a>';
+			}
+			?>
+			</div>
 			<div class="row">
 				<div class="search-area col-md-3">
 					<h5> Search Field: </h5>

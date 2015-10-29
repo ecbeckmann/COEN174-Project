@@ -2,9 +2,7 @@
 session_start();
 $error='';
 if(isset($_POST['submit'])){
-	echo "submitted";
 	if(empty($_POST['username']) || empty($_POST['password'])){
-		echo "empty fields";
 		$error = "Username or Password is invalid";
 	}
 	else{
@@ -12,10 +10,7 @@ if(isset($_POST['submit'])){
 		$password=$_POST['password'];
 		
 		$connection = mysqli_connect("localhost", "root", "");
-		
-		echo $username;
-		echo $password;
-		
+	
 		$username = stripslashes($username);
 		$password = stripslashes($password);
 		$username = mysqli_real_escape_string($connection, $username);
@@ -57,7 +52,9 @@ if(isset($_SESSION['login_user'])){
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.php">
 					<img id="logo" alt="Brand" src="https://cloud.githubusercontent.com/assets/4735087/10567984/20b70294-75c6-11e5-941f-efffff4745bb.png"> 
-					<a href="login.php"> <button id="login" type="button" class="btn btn-default">Login</button></a>
+					<?php
+					include('loginbutton.php');
+					?>
 				</a>
 			</div>
 	</nav>
