@@ -1,6 +1,12 @@
 <?php
 session_start();
+echo 'started session';
+if(!(isset($_SESSION['login_user']))){
+	echo 'trying to redirect';
+	header(  'Location: login.php');
+}
 ?>
+
 <!DOCTYPE HTML> 
 <html> 
 	<head> 
