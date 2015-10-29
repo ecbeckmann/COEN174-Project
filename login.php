@@ -1,3 +1,45 @@
+<?php
+session_start();
+$error='';
+if(isset($_POST['submit'])){
+	echo "submitted";
+	if(empty($_POST['username']) || empty($_POST['password'])){
+		echo "empty fields";
+		$error = "Username or Password is invalid";
+	}
+	else{
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		
+		$connection = mysqli_connect("localhost", "root", "");
+		
+		echo $username;
+		echo $password;
+		
+		$username = stripslashes($username);
+		$password = stripslashes($password);
+		$username = mysqli_real_escape_string($connection, $username);
+		$password = mysqli_real_escape_string($connection, $password);
+		
+		$db = mysqli_select_db($connection, "company");
+		
+		$query = mysqli_query( $connection, "select * from login where password='$password' AND username='$username'");
+		$rows = mysqli_num_rows($query);
+		if($rows == 1){
+			$_SESSION['login_user']=$username;
+			header("location: header.php");
+		}else {
+			$error = "Username or Password is invalid";
+		}
+		mysqli_close($connection);
+		
+	}
+}
+if(isset($_SESSION['login_user'])){
+	header("location: add.php");
+}
+?>
+
 <!DOCTYPE HTML> 
 <html> 
 	<head> 
@@ -20,11 +62,12 @@
 			</div>
 	</nav>
 	<div class="container">
-  		<form class="form-signin">
+  		<form class="form-signin" action="" method = "post">
     		<h2 class="form-signin-heading">Login</h2>
-				<input type="text" class="input-block-level" placeholder="Username">
-				<input type="password" class="input-block-level" placeholder="Password">
-				<input type="submit" class="btn btn-primary">
+				<input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
+				<input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
+				<input name="submit" type="submit" class="btn btn-primary">
+				<span><?php echo $error; ?></span>
 		</form>
 	</div>
 	</body> 
