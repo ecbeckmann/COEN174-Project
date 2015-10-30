@@ -134,3 +134,10 @@ body, html {
 .form-control { 
 	width: 250px;
 }
+
+.wrapper { 
+	max-height: 400px;
+	max-width: 900px;
+	overflow: auto;
+	border: 1px solid black;
+}
