@@ -86,9 +86,11 @@ session_start();
 				</div> <!--end search area-->
 			<div class="content col-md-9"> 
 					<h3> To find desciriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h3>
+          <div class="wrapper">
           <?php 
             include 'newconnection.php';
           ?>
+          </div>
 			</div>
 		 </div>
 		</div>
