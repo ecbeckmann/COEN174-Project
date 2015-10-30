@@ -79,9 +79,11 @@
             <button type="button" class="btn btn-default" aria-label="Right Align">
               <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Delete Course
             </button>
+            <div class="wrapper">
             <?php 
             include 'newconnection.php';
             ?>
+            </div>
           </div>
 				</div>
 			</div>
