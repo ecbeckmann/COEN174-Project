@@ -1,12 +1,12 @@
 <?php
-$con=mysqli_connect("localhost","root","","demo");
+$con=mysqli_connect("dbserver.engr.scu.edu","crohacz","00000896245","courses");
 // Check connection
 if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$result = mysqli_query($con,"SELECT * FROM demo_table");
+$result = mysqli_query($con,"SELECT * FROM sdb_crohacz");
 
 echo "<table border='1'>
 <tr>
