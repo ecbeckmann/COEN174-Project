@@ -1,6 +1,6 @@
 <?php
 //Initialize php form variables
-$university = $_POST["university"];
+$university = SU;
 $country = $_POST["country"];
 $city = $_POST["city"];
 $course_title = $_POST["course-title"];

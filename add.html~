@@ -1,0 +1,56 @@
+<!doctype html> 
+<html> 
+	<head> 
+		<title> SCU Equivalents </title> 
+		<!-- Latest compiled and minified CSS -->
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css"> 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head> 
+	
+	<body> 
+	<nav class="navbar navbar-default"> 
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img id="logo" alt="Brand" src="images/logo.png"> 
+					<button onclick="localhost/login.html" id="login" type="button" class="btn btn-default">Login</button>
+				</a>
+			</div>
+	</nav>
+<form action="add.php" method="post">
+	<div class="content" style="clear:both;"> 
+		<form class="input-form col-md-12 col-md-offset-1">
+			<div class="form-group">
+    			<label for="universy">University</label>
+    			<input type="text" class="form-control" id="university" name="university">
+    		</div>
+    		<div class="form-group">
+    				<label for="country">Country</label>
+    				<input type="text" class="form-control" id="country" name="country">
+    		</div>
+    		<div class="form-group">
+    			<label for="city">City</label>
+    			<input type="text" class="form-control" id="city" name="city">
+  			</div>
+  			<div class="form-group">
+    			<label for="course-title">Course Title</label>
+    			<input type="text" class="form-control" id="course-title" name="course-title">
+  			</div>
+  			<div class="form-group">
+    			<label for="course-name">Course Name</label>
+    			<input type="text" class="form-control" id="course-name" name="course-name">
+  			</div>
+  			<div class="form-group" >
+    			<label for="equivalent">Equivalent</label>
+    			<input type="text" class="form-control" id="equivalent" name="equivalent">
+  			</div>
+  			<div id="submit-button" class="col-md-3 col-md-offset-7">
+  				<button type="submit" class="btn btn-default" style="float:left;">Add Course</button>
+			</div>
+		</form>
+</form>
+	</div>
+	</body> 
+</html> 
