@@ -38,6 +38,8 @@ session_start();
     			<input type="text" name="course_name" class="form-control" id="course_name">
     			<label for="equivalent">Equivalent</label>
     			<input type="text" name="equivalent" class="form-control" id="equivalent">
+			<label for"equivalent_name"> Equivalent Name </label>
+			<input type="text" name="equivalent_name" class="form-control" id="equivalent_name"> 
   			<input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
 		</form>
 		<?php include 'addCourse.php'; ?> 
