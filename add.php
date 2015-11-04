@@ -32,13 +32,13 @@ session_start();
     			<input type="text" name="country" class="form-control" id="country">
     			<label for="city">City</label>
     			<input type="text" name="city" class="form-control" id="city">
-    			<label for="course-title">Course Number</label>
+    			<label for="course-title">External Course Number</label>
     			<input type="text" name="course_number" class="form-control" id="course_number">
-    			<label for="course-name">Course Name</label>
+    			<label for="course-name">External Course Name</label>
     			<input type="text" name="course_name" class="form-control" id="course_name">
-    			<label for="equivalent">Equivalent</label>
+    			<label for="equivalent">SCU Equivalent Course Number</label>
     			<input type="text" name="equivalent" class="form-control" id="equivalent">
-			<label for"equivalent_name"> Equivalent Name </label>
+			<label for"equivalent_name">SCU Equivalent Course Name </label>
 			<input type="text" name="equivalent_name" class="form-control" id="equivalent_name"> 
   			<input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
 		</form>

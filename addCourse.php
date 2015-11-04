@@ -18,7 +18,7 @@ if(mysqli_connect_errno()) {
 
 if(isset($_POST['submit'])) {
                 if(empty($_POST['university']) || empty($_POST['country']) || empty($_POST['city']) || empty($_POST['course_number']) || empty($_POST['course_name']) || empty($_POST['equivalent']) || empty($_POST['equivalent_name'])) 			{ 
-			echo "<h4 class='message'> Please fill out the required fields </h4>"; 
+			echo "<h4 class='message'> Please fill out all the fields </h4>"; 
 		} 
 		else { 
 			$university = $_POST["university"];

@@ -24,7 +24,7 @@ echo "</select>";
 echo "</div>";
 
 echo "<div>";
-echo "Course Name: <select class='dropdown' id='course_name' name='course_name'>";
+echo "External Course Name: <select class='dropdown' id='course_name' name='course_name'>";
 echo "<option> </option>";
 $result = mysqli_query($con, "SELECT DISTINCT(course_name) AS course_name FROM courses");
 while($row = mysqli_fetch_array($result))
@@ -36,7 +36,7 @@ echo "</select>";
 echo "</div>";
 
 echo "<div>";
-echo "Course Number: <select class='dropdown' id='course_number' name='course_number'>";
+echo "External Course Number: <select class='dropdown' id='course_number' name='course_number'>";
 echo "<option> </option>";
 
 $result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses");
