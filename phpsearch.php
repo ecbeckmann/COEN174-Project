@@ -83,7 +83,7 @@ if(isset($_POST['submit'])) {
 	}
 }
 else { 
-	$result = mysqli_query($con, "SELECT * FROM courses"); 
+	$result = mysqli_query($con, "SELECT * FROM courses ORDER BY university"); 
 } 
 
 
