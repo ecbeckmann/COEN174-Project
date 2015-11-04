@@ -49,7 +49,7 @@ echo "</select>";
 echo "</div>";
 
 echo "<div>";
-echo "SCU Equivalent: <select class='dropdown' id='scu_equivalent' name='scu_equivalent'>";
+echo "SCU Foundations Equivalent: <select class='dropdown' id='scu_equivalent' name='scu_equivalent'>";
 echo "<option> </option>";
 $result = mysqli_query($con, "SELECT DISTINCT(scu_equivalent) AS scu_equivalent FROM courses");
 while($row = mysqli_fetch_array($result))
