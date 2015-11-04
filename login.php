@@ -3,35 +3,35 @@ session_start();
 $error='';
 if(isset($_POST['submit'])){
 	if(empty($_POST['username']) || empty($_POST['password'])){
-		$error = "Username or Password is invalid";
+		$error = "Please enter both fields";
 	}
 	else{
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		
-		$connection = mysqli_connect("localhost", "root", "");
+		$connection = mysqli_connect("dbserver.engr.scu.edu", "crohacz", "00000896245");
 	
 		$username = stripslashes($username);
 		$password = stripslashes($password);
 		$username = mysqli_real_escape_string($connection, $username);
 		$password = mysqli_real_escape_string($connection, $password);
 		
-		$db = mysqli_select_db($connection, "company");
+		$db = mysqli_select_db($connection, "sdb_crohacz");
 		
-		$query = mysqli_query( $connection, "select * from login where password='$password' AND username='$username'");
+		$query = mysqli_query( $connection, "select * from users where password='$password' AND username='$username'");
 		$rows = mysqli_num_rows($query);
-		if($rows == 1){
+		if($rows == 0){
+			$error = "Username or Password is invalid";
+		}else {
 			$_SESSION['login_user']=$username;
 			header("location: header.php");
-		}else {
-			$error = "Username or Password is invalid";
 		}
 		mysqli_close($connection);
 		
 	}
 }
 if(isset($_SESSION['login_user'])){
-	header("location: add.php");
+	header("location: index.php");
 }
 ?>
 
@@ -63,9 +63,9 @@ if(isset($_SESSION['login_user'])){
     		<h2 class="form-signin-heading">Login</h2>
 				<input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
 				<input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
-				<input name="submit" type="submit" class="btn btn-primary">
+				<input name="submit" type="submit" class="btn btn-primary" value="Submit">
 				<span><?php echo $error; ?></span>
 		</form>
 	</div>
 	</body> 
-</html> 
+</html>
