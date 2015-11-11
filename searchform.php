@@ -6,7 +6,7 @@ $result = mysqli_query($con, "SELECT DISTINCT(university) AS university FROM cou
 
 echo "<div>";
 echo "University: <select class='dropdown' id='university' name='university'>";
-echo "<option> </option>";
+echo "<option>ALL</option>";
 
 while($row = mysqli_fetch_array($result))
 {
@@ -18,7 +18,7 @@ echo "</div>";
 
 echo "<div>";
 echo "External Course Name: <select class='dropdown' id='course_name' name='course_name'>";
-echo "<option> </option>";
+echo "<option>ALL</option>";
 $result = mysqli_query($con, "SELECT DISTINCT(course_name) AS course_name FROM courses");
 while($row = mysqli_fetch_array($result))
 {
@@ -30,7 +30,7 @@ echo "</div>";
 
 echo "<div>";
 echo "External Course Number: <select class='dropdown' id='course_number' name='course_number'>";
-echo "<option> </option>";
+echo "<option>ALL</option>";
 
 $result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses");
 while($row = mysqli_fetch_array($result))
