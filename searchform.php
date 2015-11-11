@@ -1,12 +1,5 @@
 <?php 
-$con = mysqli_connect("dbserver.engr.scu.edu","crohacz","00000896245","sdb_crohacz");
-// Check connection
-
-
-if (mysqli_connect_errno())
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+include 'config.php';
 
 
 $result = mysqli_query($con, "SELECT DISTINCT(university) AS university FROM courses");
