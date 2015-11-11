@@ -31,6 +31,7 @@ session_start();
             <h5> Search Field: </h5>
               <?php include 'searchform.php'; ?> 
 		<input type="submit" class="btn btn-default" name="submit" value="Submit">  
+		<input type="submit" class="btn btn-default" value="Clear" onclick="getElementByID('searchform').reset();">
 	  </form>
           <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST') { 
