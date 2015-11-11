@@ -4,12 +4,7 @@ if(!(isset($_SESSION['login_user']))){
         header(  'Location: login.php');
 }
 
-$servername = "dbserver.engr.scu.edu";
-$username = "crohacz";
-$password = "00000896245";
-$db_name = "sdb_crohacz";
-
-$conn = mysqli_connect($servername, $username, $password, $db_name);
+include 'config.php';
 
 if(mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -36,11 +31,11 @@ if(isset($_POST['submit'])) {
 				//Insert data into table
                 		$sql = "INSERT INTO courses (university, country, city, course_number, course_name, scu_equivalent, scu_equivalent_name) VALUES ('$university', '$country', '$city', '$course_number', '$course_name', '$equivalent', '$equivalent_name')";
 
-				if($conn->query($sql) === TRUE) {
+				if($con->query($sql) === TRUE) {
                 			echo "<h4 class='message'> New Record created successfully!</h4>";
         			}
         			else {
-                			echo "Error: " . $sql ."<br>" . $conn->error;
+                			echo "Error: " . $sql ."<br>" . $con->error;
         			}
 			}
 			else { 
@@ -52,6 +47,6 @@ if(isset($_POST['submit'])) {
 
 
 //Close Connection
-$conn->close();
+$con->close();
 
 ?>
