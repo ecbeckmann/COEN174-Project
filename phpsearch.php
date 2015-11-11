@@ -33,15 +33,15 @@ if(isset($_POST['submit'])) {
 		} 
 
 		else if(empty($_POST['university']) and empty($_POST['course_name']) and empty($_POST['course_number'])) { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE scu_equivalent='$equivalent'");
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE scu_equivalent_name='$equivalent'");
 		}
  
 		else if(empty($_POST['university']) and empty($_POST['course_name'])) { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE course_number = '$course_number' AND scu_equivalent = '$equivalent'");
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
 		}
 
 		else if(empty($_POST['university']) and empty($_POST['course_number'])) { 
-			$result = mysqli_query($con,"SELECT * FROM courses WHERE course_name= '$course_name' AND scu_equivalent = '$equivalent'");
+			$result = mysqli_query($con,"SELECT * FROM courses WHERE course_name= '$course_name' AND scu_equivalent_name = '$equivalent'");
 		}
 
 		else if(empty($_POST['university']) and empty($_POST['scu_equivalent'])) { 
@@ -49,7 +49,7 @@ if(isset($_POST['submit'])) {
 		}
 
 		else if(empty($_POST['course_name']) and empty($_POST['course_number'])) { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND scu_equivalent = '$equivalent'");
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND scu_equivalent_name = '$equivalent'");
 		}
 
 		else if(empty($_POST['course_name']) and empty($_POST['scu_equivalent'])) { 
@@ -61,15 +61,15 @@ if(isset($_POST['submit'])) {
 		}
 
 		else if(empty($_POST['university'])) { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND course_number = '$course_number' AND scu_equivalent = '$equivalent'");
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
 		}
 
 		else if(empty($_POST['course_name'])) { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND scu_equivalent = '$equivalent'");
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
 		}
 
 		else if(empty($_POST['course_number'])) { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND university = '$university' AND scu_equivalent = '$equivalent'");
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND university = '$university' AND scu_equivalent_name = '$equivalent'");
 		}
 
 		else if(empty($_POST['scu_equivalent'])) { 
@@ -77,7 +77,7 @@ if(isset($_POST['submit'])) {
 		}
 
 		else { 
-			$result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND course_name = '$course_name' AND scu_equivalent = '$equivalent'"); 
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND course_name = '$course_name' AND scu_equivalent_name = '$equivalent'"); 
 		}
 
 	}
