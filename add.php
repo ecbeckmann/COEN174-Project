@@ -37,12 +37,58 @@ session_start();
     			<label for="course-name">External Course Name</label>
     			<input type="text" name="course_name" class="form-control" id="course_name">
     			<label for="equivalent">SCU Equivalent Course Number</label>
-    			<input type="text" name="equivalent" class="form-control" id="equivalent">
-			<label for"equivalent_name">SCU Equivalent Course Name </label>
-			<input type="text" name="equivalent_name" class="form-control" id="equivalent_name"> 
-  			<input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
+				<select class='dropdown form-control' id='equivalent' name='equivalent' onchange="numberChange()">
+					<option></option>
+					<option>COEN 21</option>
+					<option>COEN 12</option>
+					<option>COEN 20</option>
+					<option>ELEN 33</option>
+					<option>AMTH 240</option>
+					<option>AMTH 210</option>
+					<option>AMTH 106</option>
+					<option>AMTH 220</option>
+					<option>AMTH 221</option>
+					<option>AMTH 245</option>
+					<option>AMTH 246</option>
+				</select>
+				<label for"equivalent_name">SCU Equivalent Course Name </label>
+				<input type="text" name="equivalent_name" class="form-control" id="equivalent_name"> 
+				<input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
 		</form>
 		<?php include 'addCourse.php'; ?> 
 	</div>
+	
+	<script>
+	function numberChange(){
+			var opt = document.getElementById("equivalent");
+			var res = document.getElementById("equivalent_name");
+			if(opt.value == "COEN 21"){
+				res.value = "LOGIC DESIGN";
+			}else if(opt.value == "COEN 12"){
+				res.value = "DATA STRUCTURES";
+			}else if(opt.value == "COEN 20"){
+				res.value = "EMBEDDED SYSTEMS";
+			}else if(opt.value == "ELEN 33"){
+				res.value = "DIGITAL SYSTEMS";
+			}else if(opt.value == "AMTH 240"){
+				res.value = "DESCRETE MATH";
+			}else if(opt.value == "AMTH 210"){
+				res.value = "PROBABILITY 1";
+			}else if(opt.value == "AMTH 106"){
+				res.value = "DIFFERENTIAL EQUATIONS";
+			}else if(opt.value == "AMTH 220"){
+				res.value = "NUMERICAL ANALYSIS 1";
+			}else if(opt.value == "AMTH 221"){
+				res.value = "NUMERICAL ANALYSIS 2";
+			}else if(opt.value == "AMTH 245"){
+				res.value = "LINEAR ALGEBRA 1";
+			}else if(opt.value == "AMTH 246"){
+				res.value = "LINEAR ALGEBRA 2";
+			}else{
+				res.value = "";
+			}
+	}
+	</script>
+
 	</body> 
 </html>
