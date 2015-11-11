@@ -50,13 +50,15 @@ echo "</div>";
 
 echo "<div>";
 echo "SCU Foundations Equivalent: <select class='dropdown' id='scu_equivalent' name='scu_equivalent'>";
-echo "<option> </option>";
-$result = mysqli_query($con, "SELECT DISTINCT(scu_equivalent) AS scu_equivalent FROM courses");
-while($row = mysqli_fetch_array($result))
-{
-	//print_r($row);
-	echo "<option>" . $row['scu_equivalent'] . "</option>";
-}
+echo "<option>ALL</option>";
+echo "<option>LOGIC DESIGN</option>";
+echo "<option>DATA STRUCTURES </option>";
+echo "<option>COMPUTER ORGANIZATION AND ASSEMBLY LANGUAGE</option>";
+echo "<option>DISCRETE MATH</option>";
+echo "<option>PROBABILITY</option>";
+echo "<option>DIFFERENTIAL EQUATIONS</option>";
+echo "<option>NUMERICAL ANALYSIS</option>";
+echo "<option>LINEAR ALGEBRA</option>";
 echo "</select>";
 echo "</div>";
 
