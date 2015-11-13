@@ -26,6 +26,7 @@ session_start();
 			</div>
 	</nav>
 	<div class="content" style="clear:both;"> 
+		<input type="button" class="btn btn-default" value="Back Home" onclick="history.back(-1)"/>
 		<form class="input-form col-md-12 col-md-offset-1" method="post">
     			<label for="universy">University</label>
     			<input type="text" name="university" class="form-control" id="university">
