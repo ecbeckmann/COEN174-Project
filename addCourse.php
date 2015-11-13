@@ -1,4 +1,5 @@
 <?php 
+session_save_path('/var/tmp');
 if(!(isset($_SESSION['login_user']))){
         echo 'trying to redirect';
         header(  'Location: login.php');
