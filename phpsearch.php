@@ -1,4 +1,5 @@
 <?php
+session_save_path('/var/tmp');
 include 'config.php';
 if(isset($_POST['submit'])) {
 
