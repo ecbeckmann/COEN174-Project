@@ -1,0 +1,2 @@
+AddType application/run-php-as-cgi .php
+Action application/run-php-as-cgi /~ebeckman/COEN174/cgi-bin/php-cgi.cgi
