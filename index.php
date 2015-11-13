@@ -26,7 +26,8 @@ session_start();
   </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="search-area col-md-3">
+      	<h4 id="userinfo"> To find desciriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h4>
+	<div class="search-area col-md-3">
           <form method="post">
             <h5> Search Field: </h5>
               <?php include 'searchform.php'; ?> 
@@ -47,9 +48,6 @@ session_start();
             ?>
           </div>
         </div> <!--end search area-->
-      <div class="content col-md-9"> 
-          <h4> To find desciriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h4>
-      </div>
      </div>
     </div>
   </body> 
