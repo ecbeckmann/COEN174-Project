@@ -47,12 +47,16 @@ echo "SCU Foundations Equivalent: <select class='dropdown' id='scu_equivalent' n
 echo "<option>ALL</option>";
 echo "<option>LOGIC DESIGN</option>";
 echo "<option>DATA STRUCTURES </option>";
-echo "<option>COMPUTER ORGANIZATION AND ASSEMBLY LANGUAGE</option>";
+echo "<option>EMBEDDED SYSTEMS</option>";
+echo "<option>DIGITAL SYSTEMS</option>";
 echo "<option>DISCRETE MATH</option>";
-echo "<option>PROBABILITY</option>";
+echo "<option>PROBABILITY 1</option>";
 echo "<option>DIFFERENTIAL EQUATIONS</option>";
-echo "<option>NUMERICAL ANALYSIS</option>";
-echo "<option>LINEAR ALGEBRA</option>";
+echo "<option>NUMERICAL ANALYSIS 1</option>";
+echo "<option>NUMERICAL ANALYSIS 2</option>";
+echo "<option>LINEAR ALGEBRA 1</option>";
+echo "<option>LINEAR ALGEBRA 2</option>";
+
 echo "</select>";
 echo "</div>";
 
