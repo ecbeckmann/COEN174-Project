@@ -20,7 +20,7 @@ if(isset($_POST['submit']) || isset($_POST['first'])) {
 		else{
 			$course_number = $_POST["course_number"];
 		}
-		if(!isset($_POST["course_equivalent"])){
+		if(!isset($_POST["scu_equivalent"])){
 			$equivalent = 'ALL';
 		}else{
 			$equivalent = $_POST["scu_equivalent"];
