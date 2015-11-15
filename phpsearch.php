@@ -2,7 +2,6 @@
 session_save_path('/var/tmp');
 include 'config.php';
 if(isset($_POST['submit'])) {
-
         $all = "ALL";
 
         $university = $_POST["university"];
@@ -58,7 +57,7 @@ if(isset($_POST['submit'])) {
         else if ($course_name == $all) { 
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
         }
-	else if ($course_number == $all) {                                                                                                                                           
+		else if ($course_number == $all) {                                                                                                                                           
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND university = '$university' AND scu_equivalent_name = '$equivalent'");     
         }                                                                                                                                                                            
                                                                                                                                                                                      
