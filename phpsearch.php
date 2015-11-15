@@ -1,13 +1,30 @@
 <?php
 session_save_path('/var/tmp');
 include 'config.php';
-if(isset($_POST['submit'])) {
+if(isset($_POST['submit']) || isset($_POST['first'])) {
         $all = "ALL";
 
-        $university = $_POST["university"];
-        $course_name = $_POST["course_name"];
-        $course_number = $_POST["course_number"];
-        $equivalent = $_POST["scu_equivalent"];
+        if(!isset($_POST["university"])){
+			$university = 'ALL';
+		}else{
+			$university = $_POST["university"];
+		}
+		if(!isset($_POST["course_name"])){
+			$course_name = 'ALL';
+		}else{
+			$course_name = $_POST["course_name"];
+		}
+		if(!isset($_POST["course_number"])){
+			$course_number = 'ALL';
+		}
+		else{
+			$course_number = $_POST["course_number"];
+		}
+		if(!isset($_POST["course_equivalent"])){
+			$equivalent = 'ALL';
+		}else{
+			$equivalent = $_POST["scu_equivalent"];
+		}
 
         if($university == $all and $course_name == $all and  $course_number == $all and $equivalent == $all) {
                 $result = mysqli_query($con, "SELECT * FROM courses");
@@ -108,6 +125,9 @@ echo "</table>
                                                                                                                                                                                      
 $row_cnt = 0;                                                                                                                                                                        
                                                                                                                                                                                      
-mysqli_close($con);                                                                                                                                                                  
+mysqli_close($con); 
+
+unset($_POST['submit']);
+                                                                                                                                                                 
 ?>                                                                                                                                                                                   
     

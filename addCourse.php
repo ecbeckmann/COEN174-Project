@@ -17,14 +17,14 @@ if(isset($_POST['submit'])) {
 			echo "<h4 class='message'> Please fill out all the fields </h4>"; 
 		} 
 		else { 
-			$university = $_POST["university"];
-                	$country = $_POST["country"];
-                	$city = $_POST["city"];
-                	$course_number = $_POST["course_number"];
-               		$course_name = $_POST["course_name"];
-                	$equivalent = $_POST["equivalent"];
+					$university = trim($_POST["university"]);
+                	$country = trim($_POST["country"]);
+                	$city = trim($_POST["city"]);
+                	$course_number = trim($_POST["course_number"]);
+               		$course_name = trim($_POST["course_name"]);
+                	$equivalent = trim($_POST["equivalent"]);
 			$equivalent_name = $_POST["equivalent_name"]; 
-			$result = mysqli_query($conn, "SELECT * FROM courses WHERE university='$university' AND country='$country' AND city='$city' AND course_name='$course_name' AND course_number='$course_number' AND scu_equivalent='$equivalent'"); 
+			$result = mysqli_query($con, "SELECT * FROM courses WHERE university='$university' AND country='$country' AND city='$city' AND course_name='$course_name' AND course_number='$course_number' AND scu_equivalent='$equivalent'"); 
 			$row_cnt = $result->num_rows; 
 			//Check to see if entry already exists 
 			if($row_cnt == 0) {                 		

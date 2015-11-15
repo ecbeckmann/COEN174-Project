@@ -1,11 +1,7 @@
 <?php
 session_save_path('/var/tmp');
 session_start();
-$_POST['submit'] = 'hello';
-$_POST["university"] = 'ALL';
-$_POST["course_name"] = 'ALL';
-$_POST["course_number"] = 'ALL';
-$_POST["scu_equivalent"] = 'ALL';
+$_POST['first'] = 'hello';
 
 ?>
 <!DOCTYPE HTML> 
