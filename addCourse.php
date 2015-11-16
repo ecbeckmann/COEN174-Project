@@ -17,12 +17,12 @@ if(isset($_POST['submit'])) {
 			echo "<h4 class='message'> Please fill out all the fields </h4>"; 
 		} 
 		else { 
-					$university = strtoupper(trim($_POST["university"]));
-                	$country = strtoupper(trim($_POST["country"]));
-                	$city = strtoupper(trim($_POST["city"]));
-                	$course_number = strtoupper(trim($_POST["course_number"]));
-               		$course_name = strtoupper(trim($_POST["course_name"]));
-                	$equivalent = strtoupper(trim($_POST["equivalent"]));
+					$university = preg_replace( "/\s+/", " ", strtoupper(trim($_POST["university"])));
+                	$country = preg_replace( "/\s+/", " ", strtoupper(trim($_POST["country"])));
+                	$city = preg_replace( "/\s+/", " ", strtoupper(trim($_POST["city"])));
+                	$course_number = preg_replace( "/\s+/", " ", strtoupper(trim($_POST["course_number"])));
+               		$course_name = preg_replace( "/\s+/", " ", strtoupper(trim($_POST["course_name"])));
+                	$equivalent = preg_replace( "/\s+/", " ", strtoupper(trim($_POST["equivalent"])));
 			$equivalent_name = $_POST["equivalent_name"]; 
 			$result = mysqli_query($con, "SELECT * FROM courses WHERE university='$university' AND country='$country' AND city='$city' AND course_name='$course_name' AND course_number='$course_number' AND scu_equivalent='$equivalent'"); 
 			$row_cnt = $result->num_rows; 
