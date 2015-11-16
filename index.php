@@ -43,6 +43,7 @@ rad/degrees.cfm"> here </a> </h5>
             <h5> Search Field: </h5>
               <?php include 'searchform.php'; ?> 
 		<!--<input type="submit" class="btn btn-default" name="submit" value="Submit"> -->
+		<a id="clearBtn" href="index.php">Clear Form</a>
 	  </form>
           <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST') { 
