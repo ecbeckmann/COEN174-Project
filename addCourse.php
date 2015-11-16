@@ -20,9 +20,9 @@ if(isset($_POST['submit'])) {
 					$university = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["university"]))));
                 	$country = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["country"]))));
                 	$city = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["city"]))));
-                	$course_number = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["course_number"]))));
-               		$course_name = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["course_name"]))));
-                	$equivalent = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["equivalent"]))));
+                	$course_number = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z0-9\. -]/', '', strtoupper($_POST["course_number"]))));
+               		$course_name = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z0-9\. -]/', '', strtoupper($_POST["course_name"]))));
+                	$equivalent = $_POST["equivalent"];
 			$equivalent_name = $_POST["equivalent_name"]; 
 
 			$result = mysqli_query($con, "SELECT * FROM courses WHERE university='$university' AND country='$country' AND city='$city' AND course_name='$course_name' AND course_number='$course_number' AND scu_equivalent='$equivalent'"); 

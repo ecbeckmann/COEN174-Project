@@ -10,7 +10,8 @@ function reloadUniversity(form)
 	if(val1 == 'ALL') val1 = '';
 	val2 = '';
 	val3 = '';
-	val4 = '';
+	var val4=form.scu_equivalent.options[form.scu_equivalent.options.selectedIndex].value;
+	if(val4 == 'ALL') val4 = '';
 	
 	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
 }
