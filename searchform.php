@@ -18,11 +18,6 @@ function reload(form)
 	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
 }
 
-function clear(form){
-	form.university.option.selectedIndex=0;
-	form.course_name.options.selectedIndex=0;
-	//reload(this.form);
-}
 /*function reloadUniversity(form)
 {
 	var val=form.university.options[form.university.options.selectedIndex].value;

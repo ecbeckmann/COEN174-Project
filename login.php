@@ -45,7 +45,6 @@ if(isset($_SESSION['login_user'])){
 		<link rel="stylesheet" href="css/styles.css"> 
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="/js/script.js"></script>
 	</head> 
 	
 	<body> 
@@ -60,7 +59,8 @@ if(isset($_SESSION['login_user'])){
 			</div>
 	</nav>
 	<div class="container">
-  		<form class="form-signin" action="" method = "post">
+		<input id="back_button" type="button" class="btn btn-default" value="Back Home" onclick="return goHome()"/>       
+		<form class="form-signin" action="" method = "post">
     		<h2 class="form-signin-heading">Login</h2>
 				<input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
 				<input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
@@ -68,5 +68,10 @@ if(isset($_SESSION['login_user'])){
 				<span><?php echo $error; ?></span>
 		</form>
 	</div>
-	</body> 
+	</body>
+	<script type="text/javascript">                                                                                           
+                function goHome() {                                                                                               
+                        window.location.href = "http://students.engr.scu.edu/~crohacz/COEN174";                                   
+                }                                                                                                                 
+        </script>  
 </html>

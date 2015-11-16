@@ -24,6 +24,7 @@ if(isset($_POST['submit'])) {
                		$course_name = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["course_name"]))));
                 	$equivalent = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["equivalent"]))));
 			$equivalent_name = $_POST["equivalent_name"]; 
+
 			$result = mysqli_query($con, "SELECT * FROM courses WHERE university='$university' AND country='$country' AND city='$city' AND course_name='$course_name' AND course_number='$course_number' AND scu_equivalent='$equivalent'"); 
 			$row_cnt = $result->num_rows; 
 			//Check to see if entry already exists 

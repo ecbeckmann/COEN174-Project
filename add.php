@@ -28,39 +28,49 @@ session_start();
 	<div class="content" style="clear:both;"> 
 		<input type="button" class="btn btn-default" value="Back Home" onclick="history.back(-1)"/>
 		<form class="input-form col-md-12 col-md-offset-1" method="post">
-    			<label for="universy">University</label>
-    			<input type="text" name="university" class="form-control" id="university">
-    			<label for="country">Country</label>
-    			<input type="text" name="country" class="form-control" id="country">
-    			<label for="city">City</label>
-    			<input type="text" name="city" class="form-control" id="city">
-    			<label for="course-title">External Course Number</label>
-    			<input type="text" name="course_number" class="form-control" id="course_number">
-    			<label for="course-name">External Course Name</label>
-    			<input type="text" name="course_name" class="form-control" id="course_name">
-    			<label for="equivalent">SCU Equivalent Course Number</label>
-				<select class='dropdown form-control' id='equivalent' name='equivalent' onchange="numberChange()">
-					<option></option>
-					<option>COEN 21</option>
-					<option>COEN 12</option>
-					<option>COEN 20</option>
-					<option>ELEN 33</option>
-					<option>AMTH 240</option>
-					<option>AMTH 210</option>
-					<option>AMTH 106</option>
-					<option>AMTH 220</option>
-					<option>AMTH 221</option>
-					<option>AMTH 245</option>
-					<option>AMTH 246</option>
-				</select>
-				<label for"equivalent_name">SCU Equivalent Course Name </label>
-				<input type="text" name="equivalent_name" class="form-control" id="equivalent_name" readonly> 
-				<input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
-		</form>
+                        <label for="universy">University</label>
+                        <p> (i.e. IIT BANGALORE) </p>
+                        <input type="text" name="university" class="form-control" id="university">
+                        <label for="country">Country</label>
+                        <p> (i.e. INDIA) </p>
+                        <input type="text" name="country" class="form-control" id="country">
+                        <label for="city">City</label>
+                        <p> (i.e. BANGALORE) </p>
+                        <input type="text" name="city" class="form-control" id="city">
+                        <label for="course-title">External Course Number</label>
+                        <p> (i.e. CSE112) </p>
+                        <input type="text" name="course_number" class="form-control" id="course_number">
+                        <label for="course-name">External Course Name</label>
+                        <p> (i.e. LOGIC DESIGN) </p>
+                        <input type="text" name="course_name" class="form-control" id="course_name">
+                        <label for="equivalent">SCU Equivalent Course Number</label>
+                        <p> (i.e. COEN21) </p>
+                                <select class='dropdown form-control' id='equivalent' name='equivalent' onchange="numberChange()">
+                                        <option></option>
+                                        <option>COEN 21</option>
+                                        <option>COEN 12</option>
+                                        <option>COEN 20</option>
+                                        <option>ELEN 33</option>
+                                        <option>AMTH 240</option>
+                                        <option>AMTH 210</option>
+                                        <option>AMTH 106</option>
+                                        <option>AMTH 220</option>
+                                        <option>AMTH 221</option>
+                                        <option>AMTH 245</option>
+                                        <option>AMTH 246</option>
+                                </select>
+                                <label for"equivalent_name">SCU Equivalent Course Name </label>
+                                <p> (i.e. LOGIC DESIGN) </p>
+                                <input type="text" name="equivalent_name" class="form-control" id="equivalent_name">
+                                <input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
+                </form>
 		<?php include 'addCourse.php'; ?> 
 	</div>
-	
-	<script>
+	</body> 
+	<script type="text/javascript">
+	function goHome() { 
+                        window.location.href = "http://students.engr.scu.edu/~crohacz/COEN174";
+        } 
 	function numberChange(){
 			var opt = document.getElementById("equivalent");
 			var res = document.getElementById("equivalent_name");
@@ -91,6 +101,4 @@ session_start();
 			}
 	}
 	</script>
-
-	</body> 
 </html>

@@ -30,7 +30,14 @@ $_POST['first'] = 'hello';
   </nav>
     <div class="container-fluid">
       <div class="row">
-      	<h4 id="userinfo"> To find descriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h4>
+	<div id="info">
+                <p> Welcome to the SCU Equivalents webpage! This site is designed to help applying graduate students find possible equiva
+lents for SCU's foundation courses - courses that graduate students in SCU's MSCSE program are required to take before beginning graduate
+ courses. Below you may search for courses that have already been approved as equivalents for SCU's foundation courses. </p>
+                <h5 id="userinfo"> To find descriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/g
+rad/degrees.cfm"> here </a> </h5>
+        </div>
+
 	<div class="search-area col-md-3">
           <form method="post" id="searchform">
             <h5> Search Field: </h5>
@@ -54,6 +61,4 @@ $_POST['first'] = 'hello';
      </div>
     </div>
   </body> 
-  <script = "text/javascript"> 
-  </script> 
 </html> 
