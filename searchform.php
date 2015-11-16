@@ -21,7 +21,7 @@ function reload(form)
 function resetForm(form) 
 { 	
 	val1 = ''; val2 = ''; val3 = ''; val4 = ''; 
-	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
+        self.location='index.php?university=&course_name=&course_number=&scu_equivalent=;
 } 
 
 /*function reloadUniversity(form)
