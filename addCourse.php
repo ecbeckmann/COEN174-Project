@@ -17,12 +17,12 @@ if(isset($_POST['submit'])) {
 			echo "<h4 class='message'> Please fill out all the fields </h4>"; 
 		} 
 		else { 
-					$university = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["university"]))));
-                	$country = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["country"]))));
-                	$city = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["city"]))));
-                	$course_number = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["course_number"]))));
-               		$course_name = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["course_name"]))));
-                	$equivalent = preg_replace('/[^A-Za-z\. -]/', '', preg_replace( "/\s+/", " ", strtoupper(trim($_POST["equivalent"]))));
+					$university = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["university"]))));
+                	$country = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["country"]))));
+                	$city = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["city"]))));
+                	$course_number = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["course_number"]))));
+               		$course_name = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["course_name"]))));
+                	$equivalent = trim(preg_replace("/\s+/", " ", preg_replace( '/[^A-Za-z\. -]/', '', strtoupper($_POST["equivalent"]))));
 			$equivalent_name = $_POST["equivalent_name"]; 
 
 			$result = mysqli_query($con, "SELECT * FROM courses WHERE university='$university' AND country='$country' AND city='$city' AND course_name='$course_name' AND course_number='$course_number' AND scu_equivalent='$equivalent'"); 
