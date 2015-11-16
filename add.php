@@ -61,7 +61,7 @@ session_start();
                                 </select>
                                 <label for"equivalent_name">SCU Equivalent Course Name </label>
                                 <p> (i.e. LOGIC DESIGN) </p>
-                                <input type="text" name="equivalent_name" class="form-control" id="equivalent_name">
+                                <input type="text" name="equivalent_name" class="form-control" id="equivalent_name" readonly>
                                 <input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
                 </form>
 		<?php include 'addCourse.php'; ?> 
