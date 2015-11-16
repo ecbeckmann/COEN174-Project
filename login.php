@@ -60,7 +60,8 @@ if(isset($_SESSION['login_user'])){
 			</div>
 	</nav>
 	<div class="container">
-  		<form class="form-signin" action="" method = "post">
+		<input id="back_button" type="button" class="btn btn-default" value="Back Home" onclick="return goHome()"/>       
+		<form class="form-signin" action="" method = "post">
     		<h2 class="form-signin-heading">Login</h2>
 				<input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
 				<input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
@@ -68,5 +69,10 @@ if(isset($_SESSION['login_user'])){
 				<span><?php echo $error; ?></span>
 		</form>
 	</div>
-	</body> 
+	</body>
+	<script type="text/javascript">                                                                                           
+                function goHome() {                                                                                               
+                        window.location.href = "http://students.engr.scu.edu/~crohacz/COEN174";                                   
+                }                                                                                                                 
+        </script>  
 </html>
