@@ -4,6 +4,17 @@
 <head>
 <SCRIPT language=JavaScript>
 
+function reloadUniversity(form)
+{
+	var val1=form.university.options[form.university.options.selectedIndex].value;
+	if(val1 == 'ALL') val1 = '';
+	val2 = '';
+	val3 = '';
+	val4 = '';
+	
+	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
+}
+
 function reload(form)
 {
 	var val1=form.university.options[form.university.options.selectedIndex].value;
@@ -58,7 +69,7 @@ $result = mysqli_query($con, "SELECT DISTINCT(university) AS university FROM cou
 
 echo "<div>";
 
-echo "University: <select class='dropdown' id='university' name='university' onchange=\"reload(this.form)\">";
+echo "University: <select class='dropdown' id='university' name='university' onchange=\"reloadUniversity(this.form)\">";
 
 echo "<option>ALL</option>";
 
