@@ -165,10 +165,10 @@ if($scu_equivalent == 'DISCRETE MATH'){
 }else{
 	echo "<option>DISCRETE MATH</option>";
 }
-if($scu_equivalent == 'PROBABILITY'){
-	echo "<option selected>PROBABILITY</option>";
+if($scu_equivalent == 'PROBABILITY 1'){
+	echo "<option selected>PROBABILITY 1</option>";
 }else{
-	echo "<option>PROBABILITY</option>";
+	echo "<option>PROBABILITY 1</option>";
 }
 if($scu_equivalent == 'DIFFERENTIAL EQUATIONS'){
 	echo "<option selected>DIFFERENTIAL EQUATIONS</option>";
