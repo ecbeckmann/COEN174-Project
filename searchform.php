@@ -53,7 +53,7 @@ session_save_path('/var/tmp');
 include 'config.php';
 
 
-$result = mysqli_query($con, "SELECT DISTINCT(university) AS university FROM courses");
+$result = mysqli_query($con, "SELECT DISTINCT(university) AS university FROM courses ORDER BY university asc");
 
 echo "<div>";
 

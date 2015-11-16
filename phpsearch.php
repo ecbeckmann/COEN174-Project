@@ -3,87 +3,93 @@ session_save_path('/var/tmp');
 include 'config.php';
 if(isset($_POST['submit']) || isset($_POST['first'])) {
         $all = "ALL";
+		
+		
+		@$uni=$_GET['university'];
+		@$course_n=$_GET['course_name'];
+		@$course_num=$_GET['course_number'];
+		@$equivalent=$_GET['scu_equivalent'];
 
         if(!isset($_POST["university"])){
-			$university = 'ALL';
+			if(strlen($uni) == 0) $uni = 'ALL';
 		}else{
-			$university = $_POST["university"];
+			$uni = $_POST["university"];
 		}
 		if(!isset($_POST["course_name"])){
-			$course_name = 'ALL';
+			if(strlen($course_n) == 0)$course_n = 'ALL';
 		}else{
-			$course_name = $_POST["course_name"];
+			$course_n = $_POST["course_name"];
 		}
 		if(!isset($_POST["course_number"])){
-			$course_number = 'ALL';
+			if(strlen($course_num) == 0)$course_num = 'ALL';
 		}
 		else{
-			$course_number = $_POST["course_number"];
+			$course_num = $_POST["course_number"];
 		}
 		if(!isset($_POST["scu_equivalent"])){
-			$equivalent = 'ALL';
+			if(strlen($equivalent) == 0)$equivalent = 'ALL';
 		}else{
 			$equivalent = $_POST["scu_equivalent"];
 		}
 
-        if($university == $all and $course_name == $all and  $course_number == $all and $equivalent == $all) {
-                $result = mysqli_query($con, "SELECT * FROM courses");
+        if($uni == $all and $course_n == $all and  $course_num == $all and $equivalent == $all) {
+                $result = mysqli_query($con, "SELECT * FROM courses ORDER BY university asc");
         }
 
-        else if($course_name == $all and $course_number == $all and $equivalent == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses  WHERE university='$university'");
+        else if($course_n == $all and $course_num == $all and $equivalent == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses  WHERE university='$uni'");
         }
 
-        else if($university == $all and $course_number == $all and $equivalent == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name='$course_name'");
+        else if($uni == $all and $course_num == $all and $equivalent == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name='$course_n' ORDER BY university asc");
         }
 
-        else if($university == $all and $course_name == $all and $equivalent == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_number='$course_number'");
+        else if($uni == $all and $course_n == $all and $equivalent == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_number='$course_num' ORDER BY university asc");
         }       
                 
-        else if($university == $all and $course_name == $all and $course_number == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE scu_equivalent_name='$equivalent'");
+        else if($uni == $all and $course_n == $all and $course_num == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE scu_equivalent_name='$equivalent' ORDER BY university asc");
         }
-        else if ($university == $all and $course_name == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
+        else if ($uni == $all and $course_n == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_number = '$course_num' AND scu_equivalent_name = '$equivalent' ORDER BY university asc");
         }
-        else if ($university == $all and $course_number == $all) { 
-                $result = mysqli_query($con,"SELECT * FROM courses WHERE course_name= '$course_name' AND scu_equivalent_name = '$equivalent'");
+        else if ($uni == $all and $course_num == $all) { 
+                $result = mysqli_query($con,"SELECT * FROM courses WHERE course_name= '$course_n' AND scu_equivalent_name = '$equivalent' ORDER BY university asc");
         }
 
-        else if ($university == $all and $equivalent == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND course_number = '$course_number'");
+        else if ($uni == $all and $equivalent == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_n' AND course_number = '$course_num' ORDER BY university asc");
         }
-        else if ($course_name == $all and $course_number == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND scu_equivalent_name = '$equivalent'");
+        else if ($course_n == $all and $course_num == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND scu_equivalent_name = '$equivalent'");
         }
                 
-        else if($course_name == $all and $equivalent == $all) {  
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number'");
+        else if($course_n == $all and $equivalent == $all) {  
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND course_number = '$course_num'");
         }
 
-        else if ($course_number == $all and $equivalent == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_name = '$course_name'");
+        else if ($course_num == $all and $equivalent == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND course_name = '$course_n'");
         }
                                                                                                                                                                                      
-        else if ($university == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
+        else if ($uni == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_n' AND course_number = '$course_num' AND scu_equivalent_name = '$equivalent' ORDER BY university asc");
         }
                                                                                                                                                                                      
-        else if ($course_name == $all) { 
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND scu_equivalent_name = '$equivalent'");
+        else if ($course_n == $all) { 
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND course_number = '$course_num' AND scu_equivalent_name = '$equivalent'");
         }
-		else if ($course_number == $all) {                                                                                                                                           
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND university = '$university' AND scu_equivalent_name = '$equivalent'");     
+		else if ($course_num == $all) {                                                                                                                                           
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_n' AND university = '$uni' AND scu_equivalent_name = '$equivalent'");     
         }                                                                                                                                                                            
                                                                                                                                                                                      
         else if ($equivalent == $all) {                                                                                                                                              
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_name' AND course_number = '$course_number' AND university = '$university'");        
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_n' AND course_number = '$course_num' AND university = '$uni'");        
         }                                                                                                                                                                            
                                                                                                                                                                                      
         else {                                                                                                                                                                       
-                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$university' AND course_number = '$course_number' AND course_name = '$course_name' AND scu_equivalent_name = '$
+                $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND course_number = '$course_num' AND course_name = '$course_n' AND scu_equivalent_name = '$
 equivalent'");
         }                                                                                                                                                                            
                                                                                                                                                                                      

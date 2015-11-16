@@ -54,7 +54,7 @@ session_start();
 					<option>AMTH 246</option>
 				</select>
 				<label for"equivalent_name">SCU Equivalent Course Name </label>
-				<input type="text" name="equivalent_name" class="form-control" id="equivalent_name"> 
+				<input type="text" name="equivalent_name" class="form-control" id="equivalent_name" readonly> 
 				<input type="submit" class="btn btn-default" style="float:left;" name = "submit" value="Submit">
 		</form>
 		<?php include 'addCourse.php'; ?> 
