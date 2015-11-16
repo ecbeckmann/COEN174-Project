@@ -83,7 +83,7 @@ session_start();
 			}else if(opt.value == "ELEN 33"){
 				res.value = "DIGITAL SYSTEMS";
 			}else if(opt.value == "AMTH 240"){
-				res.value = "DESCRETE MATH";
+				res.value = "DISCRETE MATH";
 			}else if(opt.value == "AMTH 210"){
 				res.value = "PROBABILITY 1";
 			}else if(opt.value == "AMTH 106"){
