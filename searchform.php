@@ -17,6 +17,13 @@ function reload(form)
 	
 	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
 }
+
+function resetForm(form) 
+{ 	
+	val1 = ''; val2 = ''; val3 = ''; val4 = ''; 
+	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
+} 
+
 /*function reloadUniversity(form)
 {
 	var val=form.university.options[form.university.options.selectedIndex].value;
