@@ -32,11 +32,10 @@ $_POST['first'] = 'hello';
       <div class="row">
       	<h4 id="userinfo"> To find descriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h4>
 	<div class="search-area col-md-3">
-          <form method="post">
+          <form method="post" id="searchform">
             <h5> Search Field: </h5>
               <?php include 'searchform.php'; ?> 
 		<!--<input type="submit" class="btn btn-default" name="submit" value="Submit"> -->
-		<input type="submit" class="btn btn-default" value="Clear" onclick="document.getElementById('searchform').reset();">
 	  </form>
           <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST') { 
