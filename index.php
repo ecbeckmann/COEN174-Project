@@ -30,7 +30,7 @@ $_POST['first'] = 'hello';
   </nav>
     <div class="container-fluid">
       <div class="row">
-      	<h4 id="userinfo"> To find desciriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h4>
+      	<h4 id="userinfo"> To find descriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/grad/degrees.cfm"> here </a> </h4>
 	<div class="search-area col-md-3">
           <form method="post">
             <h5> Search Field: </h5>
