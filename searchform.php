@@ -126,6 +126,10 @@ echo "<option>ALL</option>";
 
 if(isset($university) and strlen($university) > 0){
 	$result =  mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses where university='$university'");
+
+	if(isset($course_name) and strlen($course_name) > 0) {
+                $result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses where university='$university' AND course_name = '$course_name'");
+        }
 }
 else{
 	$result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses");
