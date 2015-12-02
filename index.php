@@ -1,9 +1,7 @@
 <?php
 session_save_path('/var/tmp');
 session_start();
-
 $_POST['first'] = 'hello';
-
 ?>
 <!DOCTYPE HTML> 
 <html> 
@@ -31,20 +29,16 @@ $_POST['first'] = 'hello';
     <div class="container-fluid">
       <div class="row">
 	<div id="info">
-                <p> Welcome to the SCU Equivalents webpage! This site is designed to help applying graduate students find possible equiva
-lents for SCU's foundation courses - courses that graduate students in SCU's MSCSE program are required to take before beginning graduate
- courses. Below you may search for courses that have already been approved as equivalents for SCU's foundation courses. </p>
+                <p> Welcome to the SCU Equivalents webpage! This site is designed to help applying graduate students find possible equivalents for SCU's foundation courses - courses that graduate students in SCU's MSCSE program are required to take before beginning graduate courses. Below you may search for courses that have already been approved as equivalents for SCU's foundation courses. </p>
                 <h5 id="userinfo"> To find descriptions for SCU's foundation courses, click <a href="http://www.scu.edu/engineering/cse/g
 rad/degrees.cfm"> here </a> </h5>
         </div>
-
 	<div class="search-area col-md-3">
-          <form method="post" id="searchform">
+          <form method="post">
             <h5> Search Field: </h5>
               <?php include 'searchform.php'; ?> 
 		<!--<input type="submit" class="btn btn-default" name="submit" value="Submit"> -->
-		<a id="clearBtn" href="index.php">Clear Form</a>
-	  </form>
+	</form>
           <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST') { 
               $ID = isset($_POST['ID']) ? $_POST['ID'] : false;
@@ -52,6 +46,7 @@ rad/degrees.cfm"> here </a> </h5>
             include 'phpsearch.php';
             ?>
             <div>
+		<a id="clearBtn" href="index.php">Clear Form</a>
             <?php
               if(isset($_SESSION['login_user'])){
               echo '<a href="add.php"> <input type="submit" class="btn btn-default" value="Add Course" width="100px;"></input></a>';
@@ -61,5 +56,6 @@ rad/degrees.cfm"> here </a> </h5>
         </div> <!--end search area-->
      </div>
     </div>
+	<p> The content of these web pages is not generate by and does not represent the view of Santa Clara University of any of its departments or organizations. </p> 
   </body> 
 </html> 
