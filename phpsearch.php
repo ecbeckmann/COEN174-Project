@@ -9,7 +9,6 @@ if(isset($_POST['submit']) || isset($_POST['first'])) {
 		@$course_n=$_GET['course_name'];
 		@$course_num=$_GET['course_number'];
 		@$equivalent=$_GET['scu_equivalent'];
-
         if(!isset($_POST["university"])){
 			if(strlen($uni) == 0) $uni = 'ALL';
 		}else{
@@ -31,19 +30,15 @@ if(isset($_POST['submit']) || isset($_POST['first'])) {
 		}else{
 			$equivalent = $_POST["scu_equivalent"];
 		}
-
         if($uni == $all and $course_n == $all and  $course_num == $all and $equivalent == $all) {
                 $result = mysqli_query($con, "SELECT * FROM courses ORDER BY university asc");
         }
-
         else if($course_n == $all and $course_num == $all and $equivalent == $all) { 
                 $result = mysqli_query($con, "SELECT * FROM courses  WHERE university='$uni'");
         }
-
         else if($uni == $all and $course_num == $all and $equivalent == $all) { 
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name='$course_n' ORDER BY university asc");
         }
-
         else if($uni == $all and $course_n == $all and $equivalent == $all) { 
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE course_number='$course_num' ORDER BY university asc");
         }       
@@ -57,7 +52,6 @@ if(isset($_POST['submit']) || isset($_POST['first'])) {
         else if ($uni == $all and $course_num == $all) { 
                 $result = mysqli_query($con,"SELECT * FROM courses WHERE course_name= '$course_n' AND scu_equivalent_name = '$equivalent' ORDER BY university asc");
         }
-
         else if ($uni == $all and $equivalent == $all) { 
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE course_name = '$course_n' AND course_number = '$course_num' ORDER BY university asc");
         }
@@ -68,7 +62,6 @@ if(isset($_POST['submit']) || isset($_POST['first'])) {
         else if($course_n == $all and $equivalent == $all) {  
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND course_number = '$course_num'");
         }
-
         else if ($course_num == $all and $equivalent == $all) { 
                 $result = mysqli_query($con, "SELECT * FROM courses WHERE university = '$uni' AND course_name = '$course_n'");
         }
@@ -102,7 +95,7 @@ echo "Displaying " . $row_cnt . " results. ";
 echo "</div>";                                                                                                                                                                       
                                                                                                                                                                                      
                                                                                                                                                                                      
-echo "<div>                                                                                                                                                                          
+echo "<div class='main_table'>                                                                                                                                                                        
 <table id='#table' class='table table-striped'>                                                                                                                                      
 <tr>                                                                                                                                                                                 
 <th>University</th>                                                                                                                                                                  
@@ -132,8 +125,6 @@ echo "</table>
 $row_cnt = 0;                                                                                                                                                                        
                                                                                                                                                                                      
 mysqli_close($con); 
-
 unset($_POST['submit']);
                                                                                                                                                                  
-?>                                                                                                                                                                                   
-    
+?>                                                                     
