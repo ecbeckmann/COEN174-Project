@@ -29,7 +29,6 @@ function reload(form)
 	
 	self.location='index.php?university=' + val1 + '&course_name=' + val2 + '&course_number=' + val3 + '&scu_equivalent=' + val4;
 }
-
 /*function reloadUniversity(form)
 {
 	var val=form.university.options[form.university.options.selectedIndex].value;
@@ -61,19 +60,12 @@ function reloadScuEquivalent(form){
 @$course_name=$_GET['course_name'];
 @$course_number=$_GET['course_number'];
 @$scu_equivalent=$_GET['scu_equivalent'];
-
 session_save_path('/var/tmp');
 include 'config.php';
-
-
 $result = mysqli_query($con, "SELECT DISTINCT(university) AS university FROM courses ORDER BY university asc");
-
 echo "<div>";
-
 echo "University: <select class='dropdown' id='university' name='university' onchange=\"reloadUniversity(this.form)\">";
-
 echo "<option>ALL</option>";
-
 /*foreach($result as $noticia2){
 	if($noticia2['university']==@$university){
 		echo "<option selected>" . $noticia['university'] . "</option>";
@@ -82,7 +74,6 @@ echo "<option>ALL</option>";
 		echo "<option>" . $noticia['university'] . "</option>";
 	}
 }*/
-
 while($row = mysqli_fetch_array($result))
 {
 	//print_r($row);
@@ -95,7 +86,6 @@ while($row = mysqli_fetch_array($result))
 }
 echo "</select>";
 echo "</div>";
-
 echo "<div>";
 echo "External Course Name: <select class='dropdown' id='course_name' name='course_name' onchange=\"reload(this.form)\">";
 echo "<option>ALL</option>";
@@ -119,17 +109,14 @@ while($row = mysqli_fetch_array($result))
 }
 echo "</select>";
 echo "</div>";
-
 echo "<div>";
 echo "External Course Number: <select class='dropdown' id='course_number' name='course_number' onchange=\"reload(this.form)\">";
 echo "<option>ALL</option>";
-
 if(isset($university) and strlen($university) > 0){
 	$result =  mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses where university='$university'");
-
-	if(isset($course_name) and strlen($course_name) > 0) {
-                $result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses where university='$university' AND course_name = '$course_name'");
-        }
+	if(isset($course_name) and strlen($course_name) > 0) { 
+		$result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses where university='$university' AND course_name = '$course_name'"); 
+	} 
 }
 else{
 	$result = mysqli_query($con, "SELECT DISTINCT(course_number) AS course_number FROM courses");
@@ -137,7 +124,6 @@ else{
 while($row = mysqli_fetch_array($result))
 {
 	//print_r($row);
-
 	
 	if(strlen($course_number) > 0 && $row['course_number'] == $course_number){
 		echo "<option selected>" . $row['course_number'] . "</option>";
@@ -148,7 +134,6 @@ while($row = mysqli_fetch_array($result))
 }
 echo "</select>";
 echo "</div>";
-
 echo "<div>";
 echo "SCU Foundations Equivalent: <select class='dropdown' id='scu_equivalent' name='scu_equivalent' onchange=\"reload(this.form)\">";
 if($scu_equivalent == 'ALL'){
@@ -156,7 +141,6 @@ if($scu_equivalent == 'ALL'){
 }else{
 	echo "<option>ALL</option>";	
 }
-
 if($scu_equivalent == 'LOGIC DESIGN'){
 	echo "<option selected>LOGIC DESIGN</option>";
 }else{
@@ -209,10 +193,7 @@ if($scu_equivalent == 'NUMERICAL ANALYSIS 1'){
 }else{
 	echo "<option>LINEAR ALGEBRA 2</option>";
 }
-
 echo "</select>";
 echo "</div>";
-
-
 mysqli_close($con);
 ?>
