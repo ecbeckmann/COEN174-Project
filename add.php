@@ -26,7 +26,7 @@ session_start();
 			</div>
 	</nav>
 	<div class="content" style="clear:both;"> 
-		<input type="button" class="btn btn-default" value="Back Home" onclick="history.back(-1)"/>
+		<input type="button" class="btn btn-default" value="Back Home" onclick="return goHome()"/>
 		<form class="input-form col-md-12 col-md-offset-1" method="post">
                         <label for="universy">University</label>
                         <p> (i.e. IIT BANGALORE) </p>
@@ -66,11 +66,11 @@ session_start();
                 </form>
 		<?php include 'addCourse.php'; ?> 
 	</div>
-	</body> 
-	<script type="text/javascript">
+	
+	<script>
 	function goHome() { 
-                        window.location.href = "http://students.engr.scu.edu/~crohacz/COEN174";
-        } 
+		window.location.href = "index.php"; 
+	} 
 	function numberChange(){
 			var opt = document.getElementById("equivalent");
 			var res = document.getElementById("equivalent_name");
@@ -101,4 +101,6 @@ session_start();
 			}
 	}
 	</script>
+
+	</body> 
 </html>
